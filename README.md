@@ -1,7 +1,9 @@
 # StockFlow – Inventory & Order Management System
 
 ## 📖 Project Overview
+
 StockFlow is a **full‑stack, production‑ready** inventory and order management system built with:
+
 - **Backend:** FastAPI, SQLAlchemy, PostgreSQL, Alembic, Pydantic
 - **Frontend:** React (JavaScript), React Router, Context API, Axios
 - **Containerization:** Docker & Docker‑Compose
@@ -12,6 +14,7 @@ It provides CRUD operations for **products**, **customers**, and **orders**, enf
 ---
 
 ## 🏗️ Architecture Diagram (ASCII)
+
 ```
 +-------------------+      +---------------------+      +-------------------+
 |   Frontend (React) | <-- |   Backend (FastAPI) | <-- | PostgreSQL DB      |
@@ -26,12 +29,15 @@ It provides CRUD operations for **products**, **customers**, and **orders**, enf
 ---
 
 ## ⚙️ Setup & Development
+
 ### Prerequisites
+
 - Docker Desktop (or Docker Engine)
 - Node 20 (for local React dev)
 - Python 3.11
 
 ### Local Development
+
 ```bash
 # Clone the repo (already done)
 cd StockFlow
@@ -47,9 +53,11 @@ npm install
 ```
 
 ### Run with Docker‑Compose (recommended)
+
 ```bash
 docker compose up --build
 ```
+
 - Backend: <http://localhost:8000>
 - API docs: <http://localhost:8000/docs>
 - Frontend: <http://localhost:3000>
@@ -57,15 +65,18 @@ docker compose up --build
 ---
 
 ## 📦 Docker
+
 - `backend/Dockerfile` – Python 3.11‑slim, installs deps, runs `uvicorn app.main:app`.
 - `frontend/Dockerfile` – Node 20‑alpine, builds the React app and serves with `serve`.
 - `docker-compose.yml` – orchestrates `frontend`, `backend`, and `postgres` services.
-- `.dockerignore` – excludes node_modules, dist, .env, __pycache__.
+- `.dockerignore` – excludes node_modules, dist, .env, **pycache**.
 
 ---
 
 ## 📚 API Documentation
+
 FastAPI automatically generates OpenAPI docs at **/docs**. Key endpoints:
+
 - **/products/** – create, read, update, delete products
 - **/customers/** – CRUD for customers
 - **/orders/** – place orders (inventory validation, total amount calc)
@@ -75,12 +86,15 @@ FastAPI automatically generates OpenAPI docs at **/docs**. Key endpoints:
 ---
 
 ## 🚀 Deployment Guides
+
 ### Backend – Render
+
 - Use `render.yaml` (included) – Docker build, start command `uvicorn app.main:app --host 0.0.0.0 --port 8000`.
 - Set environment variables (`DATABASE_URL`, `SECRET_KEY`).
 - Health‑check: `/health`.
 
 ### Frontend – Vercel
+
 - Deploy the `frontend` directory.
 - `vercel.json` configures the build output (`frontend/build`).
 - Connect Vercel to the same backend URL (set `REACT_APP_API_URL` in Vercel Environment Variables).
@@ -88,6 +102,7 @@ FastAPI automatically generates OpenAPI docs at **/docs**. Key endpoints:
 ---
 
 ## 📸 Screenshots (placeholders)
+
 ![Dashboard screenshot](./frontend/public/dashboard.png)
 ![Products page screenshot](./frontend/public/products.png)
 ![Customers page screenshot](./frontend/public/customers.png)
@@ -96,6 +111,7 @@ FastAPI automatically generates OpenAPI docs at **/docs**. Key endpoints:
 ---
 
 ## 🔮 Future Improvements
+
 - Role‑based access control (admin vs. regular staff).
 - Email notifications on low‑stock or order confirmation.
 - Pagination & search filters for large data sets.
@@ -104,4 +120,4 @@ FastAPI automatically generates OpenAPI docs at **/docs**. Key endpoints:
 
 ---
 
-
+_Happy coding!_
