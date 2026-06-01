@@ -104,4 +104,4 @@ FastAPI automatically generates OpenAPI docs at **/docs**. Key endpoints:
 
 ---
 
-*Happy coding!*
+
